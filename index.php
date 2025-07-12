@@ -8,6 +8,7 @@ if (!isset($_SESSION['username'])) {
 }
 // Kullanıcı avatarını çek
 require_once 'db.php';
+require_once 'check_google_user.php';
 $stmt = $pdo->prepare('SELECT avatar FROM users WHERE username = ?');
 $stmt->execute([$_SESSION['username']]);
 $user = $stmt->fetch();
@@ -54,6 +55,11 @@ $themeList = [
             </div>
             <div class="top-bar">
                 <h1>Merhaba, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h1>
+                <?php if (isset($_SESSION['google_user']) && $_SESSION['google_user']): ?>
+                    <div style="background: #e8f5e8; border: 1px solid #4caf50; color: #2e7d32; padding: 8px 12px; border-radius: 8px; margin-bottom: 10px; text-align: center; font-size: 0.9em;">
+                        <strong>🔐 Google ile giriş yaptınız</strong>
+                    </div>
+                <?php endif; ?>
                 <div class="profile-area">
                     <button id="avatarBtn" class="avatar-btn" title="Profil Resmini Değiştir">
                         <span class="avatar-emoji" id="avatarEmoji"><?php echo $avatarList[$avatar] ?? '🐱'; ?></span>
