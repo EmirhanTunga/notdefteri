@@ -1,55 +1,70 @@
 <?php
 session_start();
-require 'db.php';
+header('Content-Type: application/json');
+
+// Kullanıcı giriş kontrolü
 if (!isset($_SESSION['username'])) {
-    header('Location: login.php');
+    http_response_code(401);
+    echo json_encode(['success' => false, 'message' => 'Unauthorized']);
     exit();
 }
-if (
-    $_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['note'])
-) {
-    $username = $_SESSION['username'];
-    $note = trim($_POST['note']);
-    $color = $_POST['color'] ?? 'yellow';
-    $tags = trim($_POST['tags'] ?? '');
-    $file_path = null;
-    // Dosya yükleme işlemi
-    if (isset($_FILES['note_file']) && $_FILES['note_file']['error'] === UPLOAD_ERR_OK) {
-        $allowed_types = [
-            'image/jpeg', 'image/png', 'image/gif', 'image/webp',
-            'application/pdf',
-            'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-            'application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-            'text/plain'
-        ];
-        $file_type = $_FILES['note_file']['type'];
-        if (in_array($file_type, $allowed_types)) {
-            $uploads_dir = __DIR__ . '/uploads';
-            if (!is_dir($uploads_dir)) {
-                mkdir($uploads_dir, 0777, true);
-            }
-            $filename = uniqid('note_') . '_' . basename($_FILES['note_file']['name']);
-            $target_path = $uploads_dir . '/' . $filename;
-            if (move_uploaded_file($_FILES['note_file']['tmp_name'], $target_path)) {
-                $file_path = 'uploads/' . $filename;
-            }
-        }
-    }
-    if ($note !== '') {
-        // Kullanıcı id'sini bul
-        $stmt = $pdo->prepare('SELECT id FROM users WHERE username = ?');
-        $stmt->execute([$username]);
-        $user = $stmt->fetch();
-        if ($user) {
-            $stmt = $pdo->prepare('INSERT INTO notes (user_id, note, color, tags, file_path) VALUES (?, ?, ?, ?, ?)');
-            $stmt->execute([$user['id'], $note, $color, $tags, $file_path]);
-            if (isset($_POST['save_and_share'])) {
-                // Sosyal akışa da ekle
-                $stmt2 = $pdo->prepare('INSERT INTO public_notes (user_id, content, file_path) VALUES (?, ?, ?)');
-                $stmt2->execute([$user['id'], $note, $file_path]);
-            }
-        }
-    }
+
+require_once 'db.php';
+
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    http_response_code(405);
+    echo json_encode(['success' => false, 'message' => 'Method not allowed']);
+    exit();
 }
-header('Location: index.php?toast=not_eklendi');
-exit(); 
+
+try {
+    $username = $_SESSION['username'];
+    $title = trim($_POST['title'] ?? '');
+    $content = trim($_POST['content'] ?? '');
+    $is_public = isset($_POST['is_public']) ? 1 : 0;
+    $note_id = $_POST['id'] ?? null;
+    
+    // Kullanıcı id'sini bul
+    $stmt = $pdo->prepare('SELECT id FROM users WHERE username = ?');
+    $stmt->execute([$username]);
+    $user = $stmt->fetch();
+    
+    if (!$user) {
+        echo json_encode(['success' => false, 'message' => 'User not found']);
+        exit();
+    }
+    
+    $user_id = $user['id'];
+    
+    if ($note_id) {
+        // Not güncelleme
+        $stmt = $pdo->prepare('UPDATE notes SET title = ?, content = ?, is_public = ?, updated_at = NOW() WHERE id = ? AND user_id = ?');
+        $result = $stmt->execute([$title, $content, $is_public, $note_id, $user_id]);
+        
+        if ($result) {
+            echo json_encode(['success' => true, 'message' => 'Not güncellendi']);
+        } else {
+            echo json_encode(['success' => false, 'message' => 'Not güncellenemedi']);
+        }
+    } else {
+        // Yeni not ekleme
+        if (empty($title) && empty($content)) {
+            echo json_encode(['success' => false, 'message' => 'Başlık veya içerik gerekli']);
+            exit();
+        }
+        
+        $stmt = $pdo->prepare('INSERT INTO notes (user_id, title, content, is_public, created_at, updated_at) VALUES (?, ?, ?, ?, NOW(), NOW())');
+        $result = $stmt->execute([$user_id, $title, $content, $is_public]);
+        
+        if ($result) {
+            echo json_encode(['success' => true, 'message' => 'Not eklendi', 'id' => $pdo->lastInsertId()]);
+        } else {
+            echo json_encode(['success' => false, 'message' => 'Not eklenemedi']);
+        }
+    }
+    
+} catch (Exception $e) {
+    error_log('Save note error: ' . $e->getMessage());
+    http_response_code(500);
+    echo json_encode(['success' => false, 'message' => 'Veritabanı hatası']);
+} 

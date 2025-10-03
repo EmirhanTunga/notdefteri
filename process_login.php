@@ -42,7 +42,7 @@ if ($action === 'register') {
     $stmt = $pdo->prepare('INSERT INTO users (username, email, phone, password) VALUES (?, ?, ?, ?)');
     $stmt->execute([$username, $email, $phone, $hash]);
     $_SESSION['username'] = $username;
-    header('Location: index.php');
+    header('Location: stitch-index.php');
     exit();
 } elseif ($action === 'login') {
     // Giriş işlemi için sadece kullanıcı adı ve şifre gerekli
@@ -59,7 +59,7 @@ if ($action === 'register') {
         exit();
     }
     $_SESSION['username'] = $username;
-    header('Location: index.php');
+    header('Location: stitch-index.php');
     exit();
 }
 header('Location: login.php?error=Bilinmeyen istek');

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Note Templates</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#137fec",
+            "background-light": "#f6f7f8",
+            "background-dark": "#101922",
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24
+    }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+<div class="flex flex-col min-h-screen">
+<header class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-700">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center space-x-8">
+<a class="flex items-center space-x-2" href="#">
+<span class="material-symbols-outlined text-primary text-3xl">description</span>
+<span class="text-xl font-bold text-gray-900 dark:text-white">NoteApp</span>
+</a>
+<nav class="hidden md:flex space-x-6">
+<a class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary" href="#">Home</a>
+<a class="text-sm font-medium text-primary dark:text-primary border-b-2 border-primary" href="#">Templates</a>
+<a class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary" href="#">Docs</a>
+<a class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary" href="#">Spaces</a>
+<a class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary" href="#">Inbox</a>
+</nav>
+</div>
+<div class="flex items-center space-x-4">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500">search</span>
+<input class="w-48 lg:w-64 pl-10 pr-4 py-2 rounded-lg bg-gray-100 dark:bg-gray-800 border-transparent focus:ring-primary focus:border-primary text-sm" placeholder="Search" type="text"/>
+</div>
+<button class="p-2 rounded-full text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+<div class="relative">
+<img alt="User avatar" class="size-9 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPWTvs02KOrgAmvcfoU3gU9UN1BQ-bl61dgfWKgC4crjyBz9ObU7J3wlaHmouYd28Y_ZLHfbTHHIZkuL4hNywUvaH14Eg4aFPBHX9HyUcoRMgo73H0amRfmiUJCR0m2LC1AX0u7DkZ1SYoC61t7wCkqd4VAa9zPBefV7ykvBdAxt-LLneV3E82UoOZ60lMSTJpY5Yd-emimQ11zeu1L3J-Y1talZ_LGuHDlk4FUPhF59WA4_qdyEl7xwQinI4xbA4G7ZIUbnW9VNDr"/>
+</div>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<div class="max-w-6xl mx-auto">
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8">
+<h1 class="text-3xl font-bold text-gray-900 dark:text-white">Templates</h1>
+<button class="mt-4 sm:mt-0 flex items-center space-x-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors duration-200 text-sm font-medium">
+<span class="material-symbols-outlined text-base">add</span>
+<span>New Template</span>
+</button>
+</div>
+<div class="space-y-10">
+<div>
+<h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Getting Started</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+<div class="group cursor-pointer">
+<div class="relative aspect-square w-full bg-cover bg-center rounded-lg overflow-hidden mb-3 transition-transform duration-300 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAMHy5py7DDuOUulXl7o4BCP1DFbz87jGPkKagWqIGsV16qdCa1If0ME7lAGvt9KmltCQk6l7TieqGSFczj4TFK5_-zGx_sGtZEpoyB97sqpFRhs_tcsJ3pvl_BsqWMMK_zltPYoPmg-mxOek1g2GKasJ4hday47JvCOHj1dRk5f-CmMwvCrdKBQpSZrP9fBy0Ts7tPvnmaTjKM45LRX_SV3CIh2lp-d14384Co-mndc2b3aXFRGouDajVTOIUbq5IVkaWjMR_hnO0X");'></div>
+<p class="font-medium text-gray-800 dark:text-gray-200 group-hover:text-primary dark:group-hover:text-primary transition-colors">Meeting Notes</p>
+</div>
+<div class="group cursor-pointer">
+<div class="relative aspect-square w-full bg-cover bg-center rounded-lg overflow-hidden mb-3 transition-transform duration-300 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDwfcY8doptnK6Tv8M1DaJEYadfxBq5aU7kstotjumlKuxU87v4CraORIgo7-Kyh7HeiQs06nnAnx6mvCHR0plO_UlQ60VyekWSQ8qXwRlp3GXWEnJR4BFC4otW0ygDwfm15L3M4LPk9OYeWCAUJYsUEzj8G3rJVkprooCTil62EYCxzz_usWSXAKf9eKdvmpsZvJQbfJsMu3SYztb6_tVEWeo55F-NPg3Z7AfjsXez66AVX210WlnlJZnuGNKSBUDP2A6yF32KwbQf");'></div>
+<p class="font-medium text-gray-800 dark:text-gray-200 group-hover:text-primary dark:group-hover:text-primary transition-colors">Project Plan</p>
+</div>
+<div class="group cursor-pointer">
+<div class="relative aspect-square w-full bg-cover bg-center rounded-lg overflow-hidden mb-3 transition-transform duration-300 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDiZzIL6aqoH-5ZxnObFx4JPmuey7Ur1m5_jaWAv5TPuJzetcGHBr44UN5xLf-OVH1sLmUKKZS0jByDmrM8azyBpNcWuPxuEQJRiw2OXr1_7MgpatJ8HHTJl7So5hasmuXqm3t237vkvCGwi7Vl6iH3AFtIeu7M8Fx7B1CWJCfmG-9_UcCzTLoKva4tFvCr9BRviYKZAr-Vav7RwhRs4ZoA99grhByTv2fJk4ul2sxn1ZgoGRC0t5AhEklVSYjs18oLXI_npEkDm4vi");'></div>
+<p class="font-medium text-gray-800 dark:text-gray-200 group-hover:text-primary dark:group-hover:text-primary transition-colors">Daily Agenda</p>
+</div>
+</div>
+</div>
+<div>
+<h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Personal</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+<div class="group cursor-pointer">
+<div class="relative aspect-square w-full bg-cover bg-center rounded-lg overflow-hidden mb-3 transition-transform duration-300 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA_xNh-vcfX8ez_8AEqydzftebwfrpspzpCbyM0pB-IVA4Amt8jddtCruULdmXu6TmxrrW0qynFZp-Bbfa_ROdzDmsXd67Nr4mmH0PwJOj0pJ3DUlrhiOF7xxnhDmq_uJre9APB2A-wdHAPVLkzEeDboOFIBu4vmMsZ_cv8LUj2qKb-gfSvxyaqSY34cIb0KKiMgyG8EzJAm53GVoY80nsxsE-IJ9EEIyae2e-1Aa-bb3Bdf4Wn2OUGDc7oSdzomPybBvUWjYK6x_EM");'></div>
+<p class="font-medium text-gray-800 dark:text-gray-200 group-hover:text-primary dark:group-hover:text-primary transition-colors">Personal Goals</p>
+</div>
+<div class="group cursor-pointer">
+<div class="relative aspect-square w-full bg-cover bg-center rounded-lg overflow-hidden mb-3 transition-transform duration-300 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDhUOSqjnTJjK7VgDnRdBGanqgs0TTG36Pw84Qyg50hjtfdbIbOA-RJm46NteTXc-wiYXRVrUBTIEnjd05AQ9vFiLca9yjS2RJbuJETBrLZn2RTVpWtgX65OQsdCOPgK1MvXUdlYh0QakEj_Zl5WSG2PMq7tgn0oTwXjPKUf3Zm5uoxDB2RDPIDHsR7e8KIapotNQBWM6OSSxVPfgfDYBXj4d4M6r6q51xes595hr8RI2LS3Wpe_kSrICrJSmH4wchei4vfTXo5-_qQ");'></div>
+<p class="font-medium text-gray-800 dark:text-gray-200 group-hover:text-primary dark:group-hover:text-primary transition-colors">Travel Plans</p>
+</div>
+<div class="group cursor-pointer">
+<div class="relative aspect-square w-full bg-cover bg-center rounded-lg overflow-hidden mb-3 transition-transform duration-300 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAhH1BCEM-xDaOU3HIoofFbNqW-rZKxRIsmW5LwV-_yc-FdwuwVIsvMl-u5faGHscrVEWkfG9NSF1CUym7flq_lwORS2D1mkbGHqM-dKDCA1pFq0Mx6YLE2m6hqqXDMELiadxNceB3Kc85MsI3S3103h4_GHJN0Z0f20J5jDNx2tnSvSBni9SwcmHX9PLDrRzg0Gl3LyX_U_5a0P_EUgVBHkbN1j4EVMEXSvpGlv9mee9WMHr5ogZWkIEDtpzaF9nY4gdZq_ScYdqn-");'></div>
+<p class="font-medium text-gray-800 dark:text-gray-200 group-hover:text-primary dark:group-hover:text-primary transition-colors">Reading List</p>
+</div>
+</div>
+</div>
+<div>
+<h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Work</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+<div class="group cursor-pointer">
+<div class="relative aspect-square w-full bg-cover bg-center rounded-lg overflow-hidden mb-3 transition-transform duration-300 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDV5-c1GmyDBGuejhOCBBULlfIBKMc3lmfY-rdB_bHBwlCZBQ0qSfBKE_i1geK2dEthmgUM43XCOmrZYwr2Frjh7eElPRdu6QrpZIK4CcmG41BdhIQNwMGznUyoQcxtp1LipZJcYJpwf9AAfUWMYCnLc_UXQeQ0gS901q4gS2j8H5av16xgpfpVBKd3EA4J48tf3Hmo-oF5m6mG1-IO8o6tWH64a7NzttupfcFo6YMM4jHsfzT4yd7N5s0jHFyT21hva5XvQML9zPFU");'></div>
+<p class="font-medium text-gray-800 dark:text-gray-200 group-hover:text-primary dark:group-hover:text-primary transition-colors">Team Meeting Notes</p>
+</div>
+<div class="group cursor-pointer">
+<div class="relative aspect-square w-full bg-cover bg-center rounded-lg overflow-hidden mb-3 transition-transform duration-300 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCgoFM7FssCjmFTT-y6-60lH4Swji9ByV66bijvyNvacBqyIPb91rAUeb78ahnYDc__pRylwXL6dpJslxfETdFPNjWK1LJZNs_Fqnzgrj03nyUAvy4kx3f4HZM3LAlxCeYXL4iivyx4Akd-V_G3v0P4fcT3A5wPZYHx12zSVpTzzfzt2QOEP4Oio84Fuz2QdgP6wYJw4OoGJ79tOYzwH_EECW5mbGtAQoaHFk_EJ3DEMnYLrn4CUC8E4OPwNX44hJ1Pc6_3XjPXOj45");'></div>
+<p class="font-medium text-gray-800 dark:text-gray-200 group-hover:text-primary dark:group-hover:text-primary transition-colors">Sprint Planning</p>
+</div>
+<div class="group cursor-pointer">
+<div class="relative aspect-square w-full bg-cover bg-center rounded-lg overflow-hidden mb-3 transition-transform duration-300 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBoxCkq3CFM50E2vgm6hEH6zOuyM1KlLXI6SB3cnVJZozgYvGUHydKSUEFj4CaLyBLKFHX7asZcuiXb8h6913IgzGUQhZoPyLUcxKnpx5R2Ml3nAY5w4P0GODDmFXft6mfO9NS8caFN3n5UkXqvbCl0ATQAjyueXtx3ZKovTFQX5G8c9IlSR4a1OAIlf-w4IlYJ-pveAY9S8VzmDiUSEyTBEpwZamFlYEpHMiiY338KT3tpyQKbiY_uBpJ-CoE1eIZ5Hz-DLK4LQkww");'></div>
+<p class="font-medium text-gray-800 dark:text-gray-200 group-hover:text-primary dark:group-hover:text-primary transition-colors">Bug Tracking</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

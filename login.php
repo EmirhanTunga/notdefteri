@@ -1,9 +1,12 @@
 <?php
 session_start();
 if (isset($_SESSION['username'])) {
-    header('Location: index.php');
+    header('Location: stitch-index.php');
     exit();
 }
+// Yeni Stitch login sayfasına yönlendir
+header('Location: stitch-login.php');
+exit();
 ?>
 <!DOCTYPE html>
 <html lang="tr">

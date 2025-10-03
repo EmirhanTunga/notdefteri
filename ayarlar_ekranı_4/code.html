@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Stitch Design</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#24a0ff",
+                        "secondary": "#05c985",
+                        "background-light": "#f7f8fa",
+                        "background-dark": "#101922",
+                        "surface-dark": "#1e293b",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .form-checkbox:checked {
+            background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+        }
+    </style>
+</head>
+<body class="font-display bg-background-dark text-white">
+<div class="flex flex-col min-h-screen">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-white/10 px-10 py-3">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3 text-white">
+<div class="w-6 h-6 text-primary">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-lg font-bold">TaskMaster</h2>
+</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-sm font-medium text-white/60 hover:text-primary" href="#">Home</a>
+<a class="text-sm font-medium text-white/60 hover:text-primary" href="#">Tasks</a>
+<a class="text-sm font-medium text-white/60 hover:text-primary" href="#">Docs</a>
+<a class="text-sm font-medium text-white/60 hover:text-primary" href="#">Goals</a>
+<a class="text-sm font-medium text-white/60 hover:text-primary" href="#">Dashboards</a>
+<a class="text-sm font-medium text-white/60 hover:text-primary" href="#">Inbox</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-white/40">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<input class="w-full pl-10 pr-4 py-2 rounded-lg bg-white/5 border-transparent focus:ring-primary focus:border-primary text-white placeholder-white/40" placeholder="Search" type="search"/>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-white/5 text-white/60 hover:bg-white/10">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<div class="w-10 h-10 rounded-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCXy00ntQwVydSe2jaaaWnnzYEEdQPJgz6g_tNOwl9_hAirkPt7dXfmSZ6EpTkG54QkuhIzi2lGdLDu9BKDH81RffjIc_SRN9mg4EIqghHd9aRAIegGmfBjS7SvUrNRTtqrrl1LGNFKtT-LxYeMPv7nfxw4b9wV09fFB--gcS7Y_ETk_CZVogZWh-UmriwvLkSAunUqnBs9TmJtALl74JRVG9zqjAooawQp7dg4MdrU5Yqi2DtWPsecxA2uGLf0-9i0KqMaIIBZJg0t');"></div>
+</div>
+</header>
+<main class="flex-1 w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+<div class="mb-8">
+<h1 class="text-4xl font-bold text-white">Settings</h1>
+<p class="text-white/60 mt-2 text-lg">Manage your account settings and preferences.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="md:col-span-1">
+<nav class="flex flex-col space-y-1">
+<a class="px-3 py-2 rounded text-base font-medium text-primary bg-primary/20" href="#profile">Profile</a>
+<a class="px-3 py-2 rounded text-base font-medium text-white/60 hover:bg-white/5" href="#notifications">Notifications</a>
+<a class="px-3 py-2 rounded text-base font-medium text-white/60 hover:bg-white/5" href="#appearance">Appearance</a>
+<a class="px-3 py-2 rounded text-base font-medium text-white/60 hover:bg-white/5" href="#privacy">Privacy</a>
+</nav>
+</div>
+<div class="md:col-span-2 space-y-12">
+<section id="profile">
+<h2 class="text-2xl font-bold text-white border-b border-white/10 pb-4">Profile</h2>
+<div class="space-y-6 pt-6">
+<div class="max-w-md">
+<label class="block text-base font-medium text-white/80 mb-2" for="fullName">Full Name</label>
+<input class="w-full px-4 py-2 rounded-lg bg-surface-dark border-white/10 focus:ring-primary focus:border-primary text-white text-base" id="fullName" type="text" value="Jane Doe"/>
+</div>
+<div class="max-w-md">
+<label class="block text-base font-medium text-white/80 mb-2" for="email">Email</label>
+<input class="w-full px-4 py-2 rounded-lg bg-surface-dark border-white/10 focus:ring-primary focus:border-primary text-white text-base" id="email" type="email" value="jane.doe@example.com"/>
+</div>
+<div class="max-w-md">
+<label class="block text-base font-medium text-white/80 mb-2" for="password">Password</label>
+<input class="w-full px-4 py-2 rounded-lg bg-surface-dark border-white/10 focus:ring-primary focus:border-primary text-white text-base" id="password" placeholder="••••••••" type="password"/>
+</div>
+</div>
+<div class="pt-8">
+<button class="px-5 py-2.5 rounded-lg bg-primary text-white text-base font-bold hover:opacity-90">Update Profile</button>
+</div>
+</section>
+<section id="notifications">
+<h2 class="text-2xl font-bold text-white border-b border-white/10 pb-4">Notifications</h2>
+<div class="space-y-4 pt-6">
+<label class="flex items-center gap-3">
+<input checked="" class="form-checkbox h-5 w-5 rounded border-white/20 bg-surface-dark text-secondary checked:bg-secondary checked:border-transparent focus:ring-secondary/50 focus:ring-offset-background-dark focus:ring-2" type="checkbox"/>
+<span class="text-lg text-white">Email Notifications</span>
+</label>
+<label class="flex items-center gap-3">
+<input checked="" class="form-checkbox h-5 w-5 rounded border-white/20 bg-surface-dark text-secondary checked:bg-secondary checked:border-transparent focus:ring-secondary/50 focus:ring-offset-background-dark focus:ring-2" type="checkbox"/>
+<span class="text-lg text-white">Push Notifications</span>
+</label>
+<label class="flex items-center gap-3">
+<input class="form-checkbox h-5 w-5 rounded border-white/20 bg-surface-dark text-secondary checked:bg-secondary checked:border-transparent focus:ring-secondary/50 focus:ring-offset-background-dark focus:ring-2" type="checkbox"/>
+<span class="text-lg text-white">In-App Notifications</span>
+</label>
+</div>
+</section>
+<section id="appearance">
+<h2 class="text-2xl font-bold text-white border-b border-white/10 pb-4">Appearance</h2>
+<div class="flex gap-4 pt-6">
+<label class="relative cursor-pointer">
+<input class="sr-only" name="theme" type="radio"/>
+<div class="px-4 py-2 rounded-lg border-2 border-white/10 text-base font-medium text-white/60 hover:border-primary/50">
+                                    Light Mode
+                                </div>
+</label>
+<label class="relative cursor-pointer">
+<input checked="" class="sr-only" name="theme" type="radio"/>
+<div class="px-4 py-2 rounded-lg border-2 border-primary bg-primary/20 text-base font-medium text-primary">
+                                    Dark Mode
+                                </div>
+</label>
+</div>
+</section>
+<section id="privacy">
+<h2 class="text-2xl font-bold text-white border-b border-white/10 pb-4">Privacy</h2>
+<div class="space-y-4 pt-6">
+<label class="flex items-center gap-3">
+<input checked="" class="form-checkbox h-5 w-5 rounded border-white/20 bg-surface-dark text-secondary checked:bg-secondary checked:border-transparent focus:ring-secondary/50 focus:ring-offset-background-dark focus:ring-2" type="checkbox"/>
+<span class="text-lg text-white">Share Profile Publicly</span>
+</label>
+<label class="flex items-center gap-3">
+<input class="form-checkbox h-5 w-5 rounded border-white/20 bg-surface-dark text-secondary checked:bg-secondary checked:border-transparent focus:ring-secondary/50 focus:ring-offset-background-dark focus:ring-2" type="checkbox"/>
+<span class="text-lg text-white">Allow Data Collection</span>
+</label>
+</div>
+<div class="pt-8">
+<button class="px-5 py-2.5 rounded-lg bg-primary text-white text-base font-bold hover:opacity-90">Save Settings</button>
+</div>
+</section>
+</div>
+</div>
+</main>
+</div>
+</body></html>

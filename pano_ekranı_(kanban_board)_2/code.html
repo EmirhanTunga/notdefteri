@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TaskFlow Kanban Board</title>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+<div class="flex flex-col min-h-screen">
+<header class="flex items-center justify-between px-6 py-3 border-b border-gray-200 dark:border-gray-700/50">
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2 text-gray-900 dark:text-white">
+<svg class="h-8 w-8 text-primary" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.59L7.71 13.3a1 1 0 0 1 1.41-1.41L11 13.17l4.88-4.88a1 1 0 0 1 1.41 1.41L12.41 14.59a1 1 0 0 1-1.41 0z"></path></svg>
+<h1 class="text-xl font-bold">TaskFlow</h1>
+</div>
+<nav class="hidden md:flex items-center gap-4">
+<a class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary" href="#">Home</a>
+<a class="text-sm font-bold text-primary dark:text-primary" href="#">Board</a>
+<a class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary" href="#">Docs</a>
+<a class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary" href="#">Goals</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500">search</span>
+<input class="w-48 bg-gray-100 dark:bg-background-dark border border-gray-200 dark:border-gray-700/50 rounded-lg pl-10 pr-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary" placeholder="Search tasks..." type="text"/>
+</div>
+<button class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800/50">
+<span class="material-symbols-outlined text-gray-600 dark:text-gray-300">notifications</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDejCdc2lKul8__1M7teshIpAFCAAGy0YSanekwBPBfjs8Lahr4Qh-tknq0SjQ75MGkVSC1IH9LQ423_2rmtqknvoNHdTYDLjIP4qNtosfN7TJpDZU4bXULsPrv4R2dbMe1lEZcY4cAM46VOQY8Wl8Yq-e-An2pVVyPpm2bTQPLjCRS-OM4RmqmZNe9qBHqrWxowZATZSDQzrZfxQAILsmIhQ3c9OzrkJUGE38MuE18_v7_thyJGZgpKT6Bx7-iVNGxzhGK1A9QLw8p');"></div>
+</div>
+</header>
+<main class="flex-grow p-4 sm:p-6">
+<div class="flex items-center justify-between mb-6">
+<h2 class="text-2xl font-bold text-gray-900 dark:text-white">Project Alpha Board</h2>
+<div class="flex items-center gap-2">
+<button class="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-primary rounded-lg hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary/50 dark:focus:ring-offset-background-dark">
+<span class="material-symbols-outlined text-base">add</span>
+<span>New Task</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-gray-100/50 dark:bg-gray-900/30 rounded-xl p-4 flex flex-col">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-bold text-gray-800 dark:text-gray-100">To Do</h3>
+<span class="text-sm font-medium text-gray-500 dark:text-gray-400 bg-gray-200 dark:bg-gray-800/50 px-2 py-1 rounded-full">3</span>
+</div>
+<div class="space-y-4 flex-grow">
+<div class="bg-white dark:bg-background-dark p-4 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700/50 cursor-grab active:cursor-grabbing">
+<div class="flex items-start justify-between mb-2">
+<h4 class="font-semibold text-gray-800 dark:text-gray-100">Design landing page</h4>
+<span class="flex-shrink-0 ml-2 px-2 py-0.5 text-xs font-semibold text-red-800 bg-red-100 rounded-full dark:text-red-100 dark:bg-red-800/50">High</span>
+</div>
+<p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Create a modern and responsive design for the main landing page.</p>
+<div class="flex items-center justify-between text-xs text-gray-400 dark:text-gray-500">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">calendar_today</span>July 15</span>
+<div class="flex items-center -space-x-2">
+<div class="w-6 h-6 rounded-full bg-cover bg-center border-2 border-white dark:border-background-dark" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBmaXV-7KrIpnOMsef3grOQ7D1MEvMF7mEpQxTmnz3xwP6tHo8OcH4IQk9hk0p0sqej75Q-DjipRuYKmOsYyEq4gfV9fqUBz_BnyZDwCkJCFd7-8UDq9Vk7RmqLTZc2YI6N8KgBSrhxmjVJ24qAPYzC3x-TTbxn8a5tZQIQpRU1xl6nmVhJrJNHhAAbInQvAq51KgoVjE5H8QKOTSKiuJKhlSdicT3Cist0v1Gu5rpPVeK0qhh9KOWrqD3i5Q1gFkuOaWbKgPhJ51Lt')"></div>
+<div class="w-6 h-6 rounded-full bg-cover bg-center border-2 border-white dark:border-background-dark" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBmaXV-7KrIpnOMsef3grOQ7D1MEvMF7mEpQxTmnz3xwP6tHo8OcH4IQk9hk0p0sqej75Q-DjipRuYKmOsYyEq4gfV9fqUBz_BnyZDwCkJCFd7-8UDq9Vk7RmqLTZc2YI6N8KgBSrhxmjVJ24qAPYzC3x-TTbxn8a5tZQIQpRU1xl6nmVhJrJNHhAAbInQvAq51KgoVjE5H8QKOTSKiuJKhlSdicT3Cist0v1Gu5rpPVeK0qhh9KOWrqD3i5Q1gFkuOaWbKgPhJ51Lt')"></div>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-background-dark p-4 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700/50 cursor-grab active:cursor-grabbing">
+<div class="flex items-start justify-between mb-2">
+<h4 class="font-semibold text-gray-800 dark:text-gray-100">Develop user authentication</h4>
+<span class="flex-shrink-0 ml-2 px-2 py-0.5 text-xs font-semibold text-yellow-800 bg-yellow-100 rounded-full dark:text-yellow-100 dark:bg-yellow-800/50">Medium</span>
+</div>
+<p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Implement sign-up, login, and password reset functionality.</p>
+<div class="flex items-center justify-between text-xs text-gray-400 dark:text-gray-500">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">calendar_today</span>July 20</span>
+<div class="flex items-center -space-x-2">
+<div class="w-6 h-6 rounded-full bg-cover bg-center border-2 border-white dark:border-background-dark" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBmaXV-7KrIpnOMsef3grOQ7D1MEvMF7mEpQxTmnz3xwP6tHo8OcH4IQk9hk0p0sqej75Q-DjipRuYKmOsYyEq4gfV9fqUBz_BnyZDwCkJCFd7-8UDq9Vk7RmqLTZc2YI6N8KgBSrhxmjVJ24qAPYzC3x-TTbxn8a5tZQIQpRU1xl6nmVhJrJNHhAAbInQvAq51KgoVjE5H8QKOTSKiuJKhlSdicT3Cist0v1Gu5rpPVeK0qhh9KOWrqD3i5Q1gFkuOaWbKgPhJ51Lt')"></div>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-background-dark p-4 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700/50 cursor-grab active:cursor-grabbing">
+<div class="flex items-start justify-between mb-2">
+<h4 class="font-semibold text-gray-800 dark:text-gray-100">Setup CI/CD pipeline</h4>
+<span class="flex-shrink-0 ml-2 px-2 py-0.5 text-xs font-semibold text-green-800 bg-green-100 rounded-full dark:text-green-100 dark:bg-green-800/50">Low</span>
+</div>
+<p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Automate testing and deployment processes for the application.</p>
+<div class="flex items-center justify-between text-xs text-gray-400 dark:text-gray-500">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">calendar_today</span>July 25</span>
+<div class="flex items-center -space-x-2">
+<div class="w-6 h-6 rounded-full bg-cover bg-center border-2 border-white dark:border-background-dark" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBmaXV-7KrIpnOMsef3grOQ7D1MEvMF7mEpQxTmnz3xwP6tHo8OcH4IQk9hk0p0sqej75Q-DjipRuYKmOsYyEq4gfV9fqUBz_BnyZDwCkJCFd7-8UDq9Vk7RmqLTZc2YI6N8KgBSrhxmjVJ24qAPYzC3x-TTbxn8a5tZQIQpRU1xl6nmVhJrJNHhAAbInQvAq51KgoVjE5H8QKOTSKiuJKhlSdicT3Cist0v1Gu5rpPVeK0qhh9KOWrqD3i5Q1gFkuOaWbKgPhJ51Lt')"></div>
+</div>
+</div>
+</div>
+</div>
+<button class="mt-4 flex items-center justify-center w-full gap-2 px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-800/50 rounded-lg">
+<span class="material-symbols-outlined text-base">add</span>
+<span>Add Task</span>
+</button>
+</div>
+<div class="bg-gray-100/50 dark:bg-gray-900/30 rounded-xl p-4 flex flex-col">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-bold text-gray-800 dark:text-gray-100">In Progress</h3>
+<span class="text-sm font-medium text-gray-500 dark:text-gray-400 bg-gray-200 dark:bg-gray-800/50 px-2 py-1 rounded-full">1</span>
+</div>
+<div class="space-y-4 flex-grow">
+<div class="bg-white dark:bg-background-dark p-4 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700/50 cursor-grab active:cursor-grabbing">
+<div class="flex items-start justify-between mb-2">
+<h4 class="font-semibold text-gray-800 dark:text-gray-100">Build database schema</h4>
+<span class="flex-shrink-0 ml-2 px-2 py-0.5 text-xs font-semibold text-red-800 bg-red-100 rounded-full dark:text-red-100 dark:bg-red-800/50">High</span>
+</div>
+<p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Define the tables, columns, and relationships for the project data.</p>
+<div class="flex items-center justify-between text-xs text-gray-400 dark:text-gray-500">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">calendar_today</span>July 18</span>
+<div class="flex items-center -space-x-2">
+<div class="w-6 h-6 rounded-full bg-cover bg-center border-2 border-white dark:border-background-dark" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBmaXV-7KrIpnOMsef3grOQ7D1MEvMF7mEpQxTmnz3xwP6tHo8OcH4IQk9hk0p0sqej75Q-DjipRuYKmOsYyEq4gfV9fqUBz_BnyZDwCkJCFd7-8UDq9Vk7RmqLTZc2YI6N8KgBSrhxmjVJ24qAPYzC3x-TTbxn8a5tZQIQpRU1xl6nmVhJrJNHhAAbInQvAq51KgoVjE5H8QKOTSKiuJKhlSdicT3Cist0v1Gu5rpPVeK0qhh9KOWrqD3i5Q1gFkuOaWbKgPhJ51Lt')"></div>
+<div class="w-6 h-6 rounded-full bg-cover bg-center border-2 border-white dark:border-background-dark" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBmaXV-7KrIpnOMsef3grOQ7D1MEvMF7mEpQxTmnz3xwP6tHo8OcH4IQk9hk0p0sqej75Q-DjipRuYKmOsYyEq4gfV9fqUBz_BnyZDwCkJCFd7-8UDq9Vk7RmqLTZc2YI6N8KgBSrhxmjVJ24qAPYzC3x-TTbxn8a5tZQIQpRU1xl6nmVhJrJNHhAAbInQvAq51KgoVjE5H8QKOTSKiuJKhlSdicT3Cist0v1Gu5rpPVeK0qhh9KOWrqD3i5Q1gFkuOaWbKgPhJ51Lt')"></div>
+</div>
+</div>
+</div>
+</div>
+<button class="mt-4 flex items-center justify-center w-full gap-2 px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-800/50 rounded-lg">
+<span class="material-symbols-outlined text-base">add</span>
+<span>Add Task</span>
+</button>
+</div>
+<div class="bg-gray-100/50 dark:bg-gray-900/30 rounded-xl p-4 flex flex-col">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-bold text-gray-800 dark:text-gray-100">Completed</h3>
+<span class="text-sm font-medium text-gray-500 dark:text-gray-400 bg-gray-200 dark:bg-gray-800/50 px-2 py-1 rounded-full">2</span>
+</div>
+<div class="space-y-4 flex-grow">
+<div class="bg-white dark:bg-background-dark p-4 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700/50 cursor-grab active:cursor-grabbing opacity-60">
+<div class="flex items-start justify-between mb-2">
+<h4 class="font-semibold text-gray-800 dark:text-gray-100 line-through">Project setup</h4>
+<span class="flex-shrink-0 ml-2 px-2 py-0.5 text-xs font-semibold text-green-800 bg-green-100 rounded-full dark:text-green-100 dark:bg-green-800/50">Low</span>
+</div>
+<p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Initialize the repository and configure the development environment.</p>
+<div class="flex items-center justify-between text-xs text-gray-400 dark:text-gray-500">
+<span class="flex items-center gap-1 text-green-600 dark:text-green-500"><span class="material-symbols-outlined text-sm">task_alt</span>Completed</span>
+<div class="flex items-center -space-x-2">
+<div class="w-6 h-6 rounded-full bg-cover bg-center border-2 border-white dark:border-background-dark" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBmaXV-7KrIpnOMsef3grOQ7D1MEvMF7mEpQxTmnz3xwP6tHo8OcH4IQk9hk0p0sqej75Q-DjipRuYKmOsYyEq4gfV9fqUBz_BnyZDwCkJCFd7-8UDq9Vk7RmqLTZc2YI6N8KgBSrhxmjVJ24qAPYzC3x-TTbxn8a5tZQIQpRU1xl6nmVhJrJNHhAAbInQvAq51KgoVjE5H8QKOTSKiuJKhlSdicT3Cist0v1Gu5rpPVeK0qhh9KOWrqD3i5Q1gFkuOaWbKgPhJ51Lt')"></div>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-background-dark p-4 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700/50 cursor-grab active:cursor-grabbing opacity-60">
+<div class="flex items-start justify-between mb-2">
+<h4 class="font-semibold text-gray-800 dark:text-gray-100 line-through">Choose tech stack</h4>
+<span class="flex-shrink-0 ml-2 px-2 py-0.5 text-xs font-semibold text-green-800 bg-green-100 rounded-full dark:text-green-100 dark:bg-green-800/50">Low</span>
+</div>
+<p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Decide on the frameworks and libraries for frontend and backend.</p>
+<div class="flex items-center justify-between text-xs text-gray-400 dark:text-gray-500">
+<span class="flex items-center gap-1 text-green-600 dark:text-green-500"><span class="material-symbols-outlined text-sm">task_alt</span>Completed</span>
+<div class="flex items-center -space-x-2">
+<div class="w-6 h-6 rounded-full bg-cover bg-center border-2 border-white dark:border-background-dark" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBmaXV-7KrIpnOMsef3grOQ7D1MEvMF7mEpQxTmnz3xwP6tHo8OcH4IQk9hk0p0sqej75Q-DjipRuYKmOsYyEq4gfV9fqUBz_BnyZDwCkJCFd7-8UDq9Vk7RmqLTZc2YI6N8KgBSrhxmjVJ24qAPYzC3x-TTbxn8a5tZQIQpRU1xl6nmVhJrJNHhAAbInQvAq51KgoVjE5H8QKOTSKiuJKhlSdicT3Cist0v1Gu5rpPVeK0qhh9KOWrqD3i5Q1gFkuOaWbKgPhJ51Lt')"></div>
+</div>
+</div>
+</div>
+</div>
+<button class="mt-4 flex items-center justify-center w-full gap-2 px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-800/50 rounded-lg">
+<span class="material-symbols-outlined text-base">add</span>
+<span>Add Task</span>
+</button>
+</div>
+</div>
+</main>
+</div>
+</body></html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Noted - Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-blue": "#805cff",
+                        "primary-green": "#00c884",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#1e1f21",
+                        "card-dark": "#2c2d2f",
+                        "input-dark": "#363739"
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.375rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24
+        }
+    </style>
+</head>
+<body class="bg-background-dark font-display text-gray-200">
+<div class="flex items-center justify-center min-h-screen">
+<div class="w-full max-w-md p-8 space-y-6 bg-card-dark rounded-xl shadow-lg">
+<div class="text-center">
+<h1 class="text-4xl font-bold text-white">Noted</h1>
+<p class="mt-2 text-base text-gray-400">Welcome back! Please enter your details.</p>
+</div>
+<form class="space-y-6">
+<div>
+<label class="sr-only" for="email">Email</label>
+<input autocomplete="email" class="w-full px-4 py-3 bg-input-dark border border-gray-600 rounded-lg placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-blue focus:border-transparent text-base" id="email" name="email" placeholder="Email address" required="" type="email"/>
+</div>
+<div>
+<label class="sr-only" for="password">Password</label>
+<input autocomplete="current-password" class="w-full px-4 py-3 bg-input-dark border border-gray-600 rounded-lg placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-blue focus:border-transparent text-base" id="password" name="password" placeholder="Password" required="" type="password"/>
+</div>
+<div class="flex items-center justify-end">
+<a class="text-base text-primary-blue hover:underline" href="#">Forgot password?</a>
+</div>
+<div>
+<button class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-base font-medium text-white bg-gradient-to-r from-primary-blue to-primary-green hover:from-primary-blue/90 hover:to-primary-green/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-background-dark focus:ring-primary-blue" type="submit">
+                        Log in
+                    </button>
+</div>
+</form>
+<div class="relative">
+<div class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-gray-600"></div>
+</div>
+<div class="relative flex justify-center text-base">
+<span class="px-2 bg-card-dark text-gray-400">Or continue with</span>
+</div>
+</div>
+<div class="space-y-4">
+<button class="w-full flex items-center justify-center py-3 px-4 border border-gray-600 rounded-lg text-base font-medium text-gray-200 bg-input-dark hover:bg-gray-700">
+<svg class="w-5 h-5 mr-2" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12s5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24s8.955,20,20,20s20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z" fill="#4285F4"></path>
+<path d="M43.611,20.083L43.595,20L42,20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571l5.657,5.657C41.474,34.29,44,29.56,44,24C44,22.659,43.862,21.35,43.611,20.083z" fill="#34A853"></path>
+<path d="M10.21,29.29C9.537,27.262,9.158,25.17,9.158,23s0.379-4.262,1.052-6.29l-5.657-5.657C3.593,14.659,3,18.7,3,23s0.593,8.341,2.553,11.947L10.21,29.29z" fill="#FBBC05"></path>
+<path d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-5.657-5.657c-1.854,1.407-4.148,2.24-6.752,2.24c-4.404,0-8.158-2.535-9.886-6.08h-5.83v5.99C7.158,38.648,14.93,44,24,44z" fill="#EA4335"></path>
+<path d="M3,3h42v42H3V3z" fill="none"></path>
+</svg>
+                    Continue with SearchEngineCo
+                </button>
+<button class="w-full flex items-center justify-center py-3 px-4 border border-gray-600 rounded-lg text-base font-medium text-gray-200 bg-input-dark hover:bg-gray-700">
+<svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M11 11H1V1h10v10z" fill="#F25022"></path>
+<path d="M23 11h-10V1h10v10z" fill="#7FBA00"></path>
+<path d="M11 23H1v-10h10v10z" fill="#00A4EF"></path>
+<path d="M23 23h-10v-10h10v10z" fill="#FFB900"></path>
+</svg>
+                    Continue with Office365
+                </button>
+</div>
+<p class="text-base text-center text-gray-400">
+                Don't have an account?
+                <a class="font-medium text-primary-blue hover:underline" href="#">Sign up</a>
+</p>
+</div>
+</div>
+</body></html>

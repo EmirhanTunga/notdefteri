@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Note Detail Screen</title>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter:wght@400;500;700;900&amp;family=Noto+Sans:wght@400;500;700;900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+      }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+<div class="flex h-full min-h-screen w-full flex-col">
+<header class="flex items-center justify-between border-b border-gray-200 dark:border-gray-700/50 px-6 py-3">
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2 text-gray-900 dark:text-white">
+<span class="material-symbols-outlined text-primary text-3xl">description</span>
+<h1 class="text-xl font-bold">NoteMaster</h1>
+</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary" href="#">Home</a>
+<a class="text-sm font-medium text-primary" href="#">Notes</a>
+<a class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary" href="#">Tasks</a>
+<a class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary" href="#">Calendar</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden md:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">search</span>
+<input class="form-input w-full rounded-lg border-0 bg-gray-200/50 dark:bg-gray-800/50 pl-10 pr-4 py-2 text-sm text-gray-900 dark:text-gray-100 placeholder:text-gray-400 focus:ring-2 focus:ring-primary" placeholder="Search" type="search"/>
+</div>
+<button class="flex h-10 w-10 items-center justify-center rounded-full bg-gray-200/50 dark:bg-gray-800/50 hover:bg-primary/20 dark:hover:bg-primary/30">
+<span class="material-symbols-outlined text-gray-600 dark:text-gray-300">notifications</span>
+</button>
+<div class="h-10 w-10 rounded-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD7wVeHsUW48S_UBIU5-sjFpLGjGo3DbAO3ParH_gFPYjCAV2N8irLPLR3sjvr-I5aDfhxcd6lyv_Jy7FCduWlAzLf2fTDrp91l8VQvErzUi9AhzQyNpg1Vhw2XBOoCtDnmM56qklPkOXip0lvC-9E8EoFpD0xDmz_orfM52MezWggz9o7vaYwo9nqJmzSPvdD-mXp1VIAIwxVFK40ryfgivpvwvLtc6CbHKqLWnenoVHhhqcF6Dp3bYZcTX9YEEYXZqlBkM7M6VAEE');"></div>
+</div>
+</header>
+<main class="flex-1 px-4 py-8 md:px-8 lg:px-16 xl:px-32">
+<div class="mx-auto max-w-4xl">
+<div class="mb-6 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
+<div class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+<a class="hover:text-primary" href="#">Notes</a>
+<span>/</span>
+<span class="font-medium text-gray-700 dark:text-gray-300">Quarterly Planning Meeting</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex items-center gap-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-1.5 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700">
+<span class="material-symbols-outlined text-base">share</span>
+                        Share
+                    </button>
+<button class="flex h-8 w-8 items-center justify-center rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700">
+<span class="material-symbols-outlined text-base">delete</span>
+</button>
+</div>
+</div>
+<div class="space-y-6">
+<input class="form-input w-full border-0 bg-transparent p-0 text-3xl font-bold text-gray-900 dark:text-white focus:ring-0" placeholder="Note Title" value="Quarterly Planning Meeting"/>
+<textarea class="form-textarea w-full resize-none border-0 bg-transparent p-0 text-base text-gray-700 dark:text-gray-300 focus:ring-0" placeholder="Start writing your note here..." rows="15">Team alignment on Q3 goals.
+Key discussion points:
+- Project Alpha launch timeline
+- Marketing budget allocation
+- New hire onboarding process
+Action Items:
+- [ ] Sarah to finalize the project spec by EOW.
+- [ ] Mark to present the revised budget next Monday.
+- [ ] Emily to schedule interviews for the new role.</textarea>
+</div>
+<div class="mt-8 flex flex-col items-start gap-4 border-t border-gray-200 dark:border-gray-700/50 pt-6 sm:flex-row sm:items-center sm:justify-between">
+<p class="text-xs text-gray-500 dark:text-gray-400">Last edited on July 26, 2024, 10:30 AM</p>
+<div class="flex items-center gap-2">
+<button class="flex items-center gap-2 rounded-lg bg-primary/10 px-4 py-2 text-sm font-semibold text-primary hover:bg-primary/20 dark:bg-primary/20 dark:hover:bg-primary/30">
+<span class="material-symbols-outlined text-base">sell</span>
+                            Add Tag
+                        </button>
+<button class="rounded-lg bg-primary px-5 py-2 text-sm font-semibold text-white hover:bg-primary/90">
+                            Save Changes
+                        </button>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>
