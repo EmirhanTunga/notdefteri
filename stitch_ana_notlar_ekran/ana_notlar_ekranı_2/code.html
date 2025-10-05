@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Stitch Design</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                        "foreground-light": "#0d141b",
+                        "foreground-dark": "#ffffff",
+                        "subtle-light": "#4c739a",
+                        "subtle-dark": "#94a3b8",
+                        "border-light": "#cfdbe7",
+                        "border-dark": "#334155",
+                        "card-light": "#ffffff",
+                        "card-dark": "#1e293b",
+                        "accent-light": "#e7edf3",
+                        "accent-dark": "#374151"
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .icon {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-foreground-light dark:text-foreground-dark">
+<div class="flex min-h-screen">
+<aside class="w-64 bg-card-light dark:bg-card-dark border-r border-border-light dark:border-border-dark flex flex-col">
+<div class="p-4 border-b border-border-light dark:border-border-dark">
+<h1 class="text-lg font-bold">Workspace</h1>
+<p class="text-sm text-subtle-light dark:text-subtle-dark">All workspaces</p>
+</div>
+<nav class="flex-1 px-2 py-4 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-DEFAULT text-sm font-medium hover:bg-accent-light dark:hover:bg-accent-dark" href="#">
+<svg class="icon" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+<path d="M218.83,103.77l-80-75.48a1.14,1.14,0,0,1-.11-.11,16,16,0,0,0-21.53,0l-.11.11L37.17,103.77A16,16,0,0,0,32,115.55V208a16,16,0,0,0,16,16H96a16,16,0,0,0,16-16V160h32v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V115.55A16,16,0,0,0,218.83,103.77ZM208,208H160V160a16,16,0,0,0-16-16H112a16,16,0,0,0-16,16v48H48V115.55l.11-.1L128,40l79.9,75.43.11.1Z"></path>
+</svg>
+<span>Home</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-DEFAULT text-sm font-medium bg-primary/20 text-primary" href="#">
+<svg class="icon" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+<path d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM152,88V44l44,44Z"></path>
+</svg>
+<span>Docs</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-DEFAULT text-sm font-medium hover:bg-accent-light dark:hover:bg-accent-dark" href="#">
+<svg class="icon" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+<path d="M240,192h-8V56a16,16,0,0,0-16-16H40A16,16,0,0,0,24,56V192H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM40,56H216V192H200V168a8,8,0,0,0-8-8H120a8,8,0,0,0-8,8v24H72V88H184v48a8,8,0,0,0,16,0V80a8,8,0,0,0-8-8H64a8,8,0,0,0-8,8V192H40ZM184,192H128V176h56Z"></path>
+</svg>
+<span>Whiteboards</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-DEFAULT text-sm font-medium hover:bg-accent-light dark:hover:bg-accent-dark" href="#">
+<svg class="icon" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+<path d="M232,64H208V56a16,16,0,0,0-16-16H64A16,16,0,0,0,48,56v8H24A16,16,0,0,0,8,80V96a40,40,0,0,0,40,40h3.65A80.13,80.13,0,0,0,120,191.61V216H96a8,8,0,0,0,0,16h64a8,8,0,0,0,0-16H136V191.58c31.94-3.23,58.44-25.64,68.08-55.58H208a40,40,0,0,0,40-40V80A16,16,0,0,0,232,64ZM48,120A24,24,0,0,1,24,96V80H48v32q0,4,.39,8Zm144-8.9c0,35.52-28.49,64.64-63.51,64.9H128a64,64,0,0,1-64-64V56H192ZM232,96a24,24,0,0,1-24,24h-.5a81.81,81.81,0,0,0,.5-8.9V80h24Z"></path>
+</svg>
+<span>Goals</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-DEFAULT text-sm font-medium hover:bg-accent-light dark:hover:bg-accent-dark" href="#">
+<svg class="icon" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+<path d="M80,64a8,8,0,0,1,8-8H216a8,8,0,0,1,0,16H88A8,8,0,0,1,80,64Zm136,56H88a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Zm0,64H88a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16ZM44,52A12,12,0,1,0,56,64,12,12,0,0,0,44,52Zm0,64a12,12,0,1,0,12,12A12,12,0,0,0,44,116Zm0,64a12,12,0,1,0,12,12A12,12,0,0,0,44,180Z"></path>
+</svg>
+<span>Everything</span>
+</a>
+</nav>
+<div class="px-2 py-4 mt-auto border-t border-border-light dark:border-border-dark">
+<a class="flex items-center gap-3 px-3 py-2 rounded-DEFAULT text-sm font-medium hover:bg-accent-light dark:hover:bg-accent-dark" href="#">
+<svg class="icon" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+<path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"></path>
+</svg>
+<span>Invite members</span>
+</a>
+</div>
+</aside>
+<main class="flex-1 p-8">
+<header class="flex items-center justify-between mb-8">
+<h1 class="text-4xl font-bold">Docs</h1>
+<button class="bg-primary text-white font-medium px-6 py-2.5 rounded-lg hover:bg-primary/90 transition-colors">
+                    New Doc
+                </button>
+</header>
+<div class="mb-6">
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-subtle-light dark:text-subtle-dark">
+<svg class="icon" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+<path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+</svg>
+</div>
+<input class="w-full pl-12 pr-4 py-3 rounded-lg bg-card-light dark:bg-card-dark border border-border-light dark:border-border-dark focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-shadow" placeholder="Search" type="text"/>
+</div>
+</div>
+<div class="bg-card-light dark:bg-card-dark rounded-lg border border-border-light dark:border-border-dark overflow-hidden">
+<table class="w-full text-left">
+<thead class="bg-background-light dark:bg-background-dark border-b border-border-light dark:border-border-dark">
+<tr>
+<th class="px-6 py-4 text-sm font-medium text-subtle-light dark:text-subtle-dark uppercase tracking-wider">Name</th>
+<th class="px-6 py-4 text-sm font-medium text-subtle-light dark:text-subtle-dark uppercase tracking-wider">Created</th>
+<th class="px-6 py-4 text-sm font-medium text-subtle-light dark:text-subtle-dark uppercase tracking-wider">Last Updated</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b border-border-light dark:border-border-dark">
+<td class="px-6 py-5 whitespace-nowrap text-sm font-medium">Project Proposal</td>
+<td class="px-6 py-5 whitespace-nowrap text-sm text-subtle-light dark:text-subtle-dark">2023-08-15</td>
+<td class="px-6 py-5 whitespace-nowrap text-sm text-subtle-light dark:text-subtle-dark">2023-08-20</td>
+</tr>
+<tr class="border-b border-border-light dark:border-border-dark">
+<td class="px-6 py-5 whitespace-nowrap text-sm font-medium">Meeting Notes</td>
+<td class="px-6 py-5 whitespace-nowrap text-sm text-subtle-light dark:text-subtle-dark">2023-08-10</td>
+<td class="px-6 py-5 whitespace-nowrap text-sm text-subtle-light dark:text-subtle-dark">2023-08-12</td>
+</tr>
+<tr class="border-b border-border-light dark:border-border-dark">
+<td class="px-6 py-5 whitespace-nowrap text-sm font-medium">Client Onboarding</td>
+<td class="px-6 py-5 whitespace-nowrap text-sm text-subtle-light dark:text-subtle-dark">2023-08-05</td>
+<td class="px-6 py-5 whitespace-nowrap text-sm text-subtle-light dark:text-subtle-dark">2023-08-08</td>
+</tr>
+<tr class="border-b border-border-light dark:border-border-dark">
+<td class="px-6 py-5 whitespace-nowrap text-sm font-medium">Marketing Strategy</td>
+<td class="px-6 py-5 whitespace-nowrap text-sm text-subtle-light dark:text-subtle-dark">2023-07-20</td>
+<td class="px-6 py-5 whitespace-nowrap text-sm text-subtle-light dark:text-subtle-dark">2023-07-25</td>
+</tr>
+<tr>
+<td class="px-6 py-5 whitespace-nowrap text-sm font-medium">Product Roadmap</td>
+<td class="px-6 py-5 whitespace-nowrap text-sm text-subtle-light dark:text-subtle-dark">2023-07-10</td>
+<td class="px-6 py-5 whitespace-nowrap text-sm text-subtle-light dark:text-subtle-dark">2023-07-15</td>
+</tr>
+</tbody>
+</table>
+</div>
+</main>
+</div>
+
+</body></html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Stitch Design</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                        "foreground-light": "#0d141b",
+                        "foreground-dark": "#ffffff",
+                        "subtle-light": "#4c739a",
+                        "subtle-dark": "#94a3b8",
+                        "border-light": "#cfdbe7",
+                        "border-dark": "#334155",
+                        "card-light": "#ffffff",
+                        "card-dark": "#1e293b",
+                        "accent-light": "#e7edf3",
+                        "accent-dark": "#374151"
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .icon {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-foreground-light dark:text-foreground-dark">
+<div class="flex min-h-screen">
+<aside class="w-64 bg-card-light dark:bg-card-dark border-r border-border-light dark:border-border-dark flex flex-col">
+<div class="p-4 border-b border-border-light dark:border-border-dark">
+<h1 class="text-lg font-bold">Not Defteri</h1>
+<p class="text-sm text-subtle-light dark:text-subtle-dark">Tüm notlar</p>
+</div>
+<nav class="flex-1 px-2 py-4 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-DEFAULT text-sm font-medium bg-primary/20 text-primary" href="#">
+<svg class="icon" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+<path d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM152,88V44l44,44Z"></path>
+</svg>
+<span>Tüm Notlar</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-DEFAULT text-sm font-medium hover:bg-accent-light dark:hover:bg-accent-dark" href="#">
+<svg class="icon" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+<path d="M224.6,88.1l-56-56A8,8,0,0,0,162.77,32H56A16,16,0,0,0,40,48V208a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V93.23A8,8,0,0,0,224.6,88.1ZM128,204.42l-26.12-17.41a8,8,0,0,1-.52-12.33L120.47,152l-23.77-19.81a8,8,0,0,1,10.6-12L128,136.69l20.69-16.55a8,8,0,0,1,10.6,12L135.53,152l19.11,22.93a8,8,0,0,1-11.06,11.56L128,204.42ZM208,208H56V48h96v48a8,8,0,0,0,8,8h48Z"></path>
+</svg>
+<span>Favoriler</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-DEFAULT text-sm font-medium hover:bg-accent-light dark:hover:bg-accent-dark" href="#">
+<svg class="icon" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+<path d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40v88H56V40h96V88a8,8,0,0,0,8,8h48v40h16V88A8,8,0,0,0,213.66,82.34ZM104,152v64a8,8,0,0,0,8,8h32a8,8,0,0,0,8-8V152a8,8,0,0,0-8-8H112A8,8,0,0,0,104,152Zm8,0h32v64H112Zm112,56H176a8,8,0,0,0,0,16h40a8,8,0,0,0,8-8V160a8,8,0,0,0-16,0Zm-8-48a8,8,0,0,0-8,8v24H176a8,8,0,0,0,0,16h24v24a8,8,0,0,0,16,0V168a8,8,0,0,0-8-8Zm-64-48H40v72a16,16,0,0,0,16,16H88a8,8,0,0,0,0-16H56V144H88a8,8,0,0,0,0-16H56V112Z"></path>
+</svg>
+<span>Arşivlenmiş Notlar</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-DEFAULT text-sm font-medium hover:bg-accent-light dark:hover:bg-accent-dark" href="#">
+<svg class="icon" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+<path d="M228,80v96a12,12,0,0,1-12,12H192a12,12,0,0,1-8.49-3.51L160,161.94,136.49,185.5a12,12,0,0,1-17,0L95.94,161.94,72.49,185.5A12,12,0,0,1,64,188H40a12,12,0,0,1-12-12V80A12,12,0,0,1,40,68H216A12,12,0,0,1,228,80Z"></path>
+</svg>
+<span>Etiketler</span>
+</a>
+</nav>
+<div class="px-2 py-4 mt-auto border-t border-border-light dark:border-border-dark">
+<a class="flex items-center gap-3 px-3 py-2 rounded-DEFAULT text-sm font-medium hover:bg-accent-light dark:hover:bg-accent-dark" href="#">
+<svg class="icon" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+<path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"></path>
+</svg>
+<span>Yeni Not</span>
+</a>
+</div>
+</aside>
+<main class="flex-1 p-8">
+<header class="flex items-center justify-between mb-8">
+<h1 class="text-4xl font-bold">Tüm Notlar</h1>
+<button class="bg-primary text-white font-medium px-6 py-2.5 rounded-lg hover:bg-primary/90 transition-colors">
+                    Yeni Not Ekle
+                </button>
+</header>
+<div class="mb-6">
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-subtle-light dark:text-subtle-dark">
+<svg class="icon" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+<path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+</svg>
+</div>
+<input class="w-full pl-12 pr-4 py-3 rounded-lg bg-card-light dark:bg-card-dark border border-border-light dark:border-border-dark focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-shadow" placeholder="Ara" type="text"/>
+</div>
+</div>
+<div class="bg-card-light dark:bg-card-dark rounded-lg border border-border-light dark:border-border-dark overflow-hidden">
+<table class="w-full text-left">
+<thead class="bg-background-light dark:bg-background-dark border-b border-border-light dark:border-border-dark">
+<tr>
+<th class="px-6 py-4 text-sm font-medium text-subtle-light dark:text-subtle-dark uppercase tracking-wider">İsim</th>
+<th class="px-6 py-4 text-sm font-medium text-subtle-light dark:text-subtle-dark uppercase tracking-wider">Oluşturulma</th>
+<th class="px-6 py-4 text-sm font-medium text-subtle-light dark:text-subtle-dark uppercase tracking-wider">Son Güncelleme</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b border-border-light dark:border-border-dark">
+<td class="px-6 py-5 whitespace-nowrap text-sm font-medium">Proje Teklifi</td>
+<td class="px-6 py-5 whitespace-nowrap text-sm text-subtle-light dark:text-subtle-dark">2023-08-15</td>
+<td class="px-6 py-5 whitespace-nowrap text-sm text-subtle-light dark:text-subtle-dark">2023-08-20</td>
+</tr>
+<tr class="border-b border-border-light dark:border-border-dark">
+<td class="px-6 py-5 whitespace-nowrap text-sm font-medium">Toplantı Notları</td>
+<td class="px-6 py-5 whitespace-nowrap text-sm text-subtle-light dark:text-subtle-dark">2023-08-10</td>
+<td class="px-6 py-5 whitespace-nowrap text-sm text-subtle-light dark:text-subtle-dark">2023-08-12</td>
+</tr>
+<tr class="border-b border-border-light dark:border-border-dark">
+<td class="px-6 py-5 whitespace-nowrap text-sm font-medium">Müşteri Kaydı</td>
+<td class="px-6 py-5 whitespace-nowrap text-sm text-subtle-light dark:text-subtle-dark">2023-08-05</td>
+<td class="px-6 py-5 whitespace-nowrap text-sm text-subtle-light dark:text-subtle-dark">2023-08-08</td>
+</tr>
+<tr class="border-b border-border-light dark:border-border-dark">
+<td class="px-6 py-5 whitespace-nowrap text-sm font-medium">Pazarlama Stratejisi</td>
+<td class="px-6 py-5 whitespace-nowrap text-sm text-subtle-light dark:text-subtle-dark">2023-07-20</td>
+<td class="px-6 py-5 whitespace-nowrap text-sm text-subtle-light dark:text-subtle-dark">2023-07-25</td>
+</tr>
+<tr>
+<td class="px-6 py-5 whitespace-nowrap text-sm font-medium">Ürün Yol Haritası</td>
+<td class="px-6 py-5 whitespace-nowrap text-sm text-subtle-light dark:text-subtle-dark">2023-07-10</td>
+<td class="px-6 py-5 whitespace-nowrap text-sm text-subtle-light dark:text-subtle-dark">2023-07-15</td>
+</tr>
+</tbody>
+</table>
+</div>
+</main>
+</div>
+
+</body></html>
