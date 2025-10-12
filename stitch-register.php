@@ -180,18 +180,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     />
                 </div>
                 
-                <div class="flex items-center">
-                    <input 
-                        id="terms" 
-                        name="terms" 
-                        type="checkbox" 
-                        class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded"
-                        required
-                    >
-                    <label for="terms" class="ml-2 block text-sm text-gray-900 dark:text-gray-300">
-                        <a href="#" class="text-primary hover:underline">Kullanım şartlarını</a> kabul ediyorum
-                    </label>
-                </div>
+                
                 
                 <div>
                     <button 
@@ -203,29 +192,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </div>
             </form>
             
-            <div class="relative">
-                <div class="absolute inset-0 flex items-center">
-                    <div class="w-full border-t border-gray-300 dark:border-gray-700"></div>
-                </div>
-                <div class="relative flex justify-center text-sm">
-                    <span class="px-2 bg-white dark:bg-background-dark text-gray-500 dark:text-gray-400">
-                        Veya devam edin
-                    </span>
-                </div>
-            </div>
             
-            <div class="space-y-4">
-                <a href="google_callback.php" class="w-full flex items-center justify-center py-3 px-4 border border-gray-300 dark:border-gray-700 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-200 bg-white dark:bg-background-dark hover:bg-background-light dark:hover:bg-primary/10 transition-colors">
-                    <svg class="w-5 h-5 mr-2" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12s5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24s8.955,20,20,20s20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z" fill="#4285F4"></path>
-                        <path d="M43.611,20.083L43.595,20L42,20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571l5.657,5.657C41.474,34.29,44,29.56,44,24C44,22.659,43.862,21.35,43.611,20.083z" fill="#34A853"></path>
-                        <path d="M10.21,29.29C9.537,27.262,9.158,25.17,9.158,23s0.379-4.262,1.052-6.29l-5.657-5.657C3.593,14.659,3,18.7,3,23s0.593,8.341,2.553,11.947L10.21,29.29z" fill="#FBBC05"></path>
-                        <path d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-5.657-5.657c-1.854,1.407-4.148,2.24-6.752,2.24c-4.404,0-8.158-2.535-9.886-6.08h-5.83v5.99C7.158,38.648,14.93,44,24,44z" fill="#EA4335"></path>
-                        <path d="M3,3h42v42H3V3z" fill="none"></path>
-                    </svg>
-                    Google ile kayıt ol
-                </a>
-            </div>
             
             <p class="text-sm text-center text-gray-500 dark:text-gray-400">
                 Zaten hesabınız var mı?

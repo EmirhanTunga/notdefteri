@@ -55,6 +55,9 @@ function getAvailableModels() {
 
 // Gemini API çağrısı (otomatik model deneme)
 function callGeminiAPI($prompt, $conversationHistory = []) {
+    // Execution time limitini artır
+    set_time_limit(120); // 2 dakika
+    
     if (!isGeminiConfigured()) {
         return [
             'success' => false,
@@ -148,7 +151,8 @@ function tryGeminiEndpoint($endpoint, $prompt, $conversationHistory = []) {
     ]);
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
     curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
-    curl_setopt($ch, CURLOPT_TIMEOUT, 30);
+    curl_setopt($ch, CURLOPT_TIMEOUT, 60); // 60 saniye
+    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10); // Bağlantı timeout'u
 
     $response = curl_exec($ch);
     $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);

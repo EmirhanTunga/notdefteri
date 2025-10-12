@@ -11,7 +11,7 @@ header('Location: stitch-index.php');
 exit();
 // Kullanıcı bilgilerini çek
 require_once 'db.php';
-require_once 'check_google_user.php';
+
 $stmt = $pdo->prepare('SELECT username, email FROM users WHERE username = ?');
 $stmt->execute([$_SESSION['username']]);
 $user = $stmt->fetch();
